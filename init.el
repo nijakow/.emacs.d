@@ -8,3 +8,6 @@
 (global-set-key [C-tab] 'other-window)
 (global-set-key [C-iso-lefttab] 'buffer-menu)
 (global-set-key [home] 'buffer-menu)
+
+(setq c-default-style "linux"
+      c-basic-offset  4)
