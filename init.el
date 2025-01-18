@@ -13,3 +13,24 @@
 
 (setq c-default-style "linux"
       c-basic-offset  4)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;
+;;;;    P a c k a g e   S y s t e m
+;;;;
+
+(package-initialize)
+
+(defun ensure-package-list (packages)
+  (dolist (package packages)
+    (unless (package-installed-p package)
+      (message "Package %s not installed" package))))
+
+(defmacro ensure-packages (&rest package-list)
+  `(ensure-package-list '(,@package-list)))
+
+(ensure-packages
+ smalltalk-mode)
+
+
