@@ -25,7 +25,8 @@
 (defun ensure-package-list (packages)
   (dolist (package packages)
     (unless (package-installed-p package)
-      (message "Package %s not installed" package))))
+      (message "Package %s not installed, installing ..." package)
+      (package-install package))))
 
 (defmacro ensure-packages (&rest package-list)
   `(ensure-package-list '(,@package-list)))
@@ -34,3 +35,15 @@
  smalltalk-mode)
 
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages '(smalltalk-mode)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
