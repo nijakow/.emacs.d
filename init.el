@@ -47,7 +47,38 @@
 
 (ensure-packages
  doom-themes
- smalltalk-mode)
+ smalltalk-mode
+
+ lsp-mode yasnippet lsp-treemacs helm-lsp projectile hydra flycheck company avy which-key helm-xref dap-mode)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;
+;;;;    L s p   S t u f f
+;;;;
+;;;; See also: https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
+;;;;
+
+(which-key-mode)
+
+(add-hook 'c-mode-hook 'lsp)
+(add-hook 'c++-mode-hook 'lsp)
+
+
+(setq lsp-enable-symbol-highlighting t
+      lsp-ui-doc-enable t
+      lsp-ui-doc-show-with-cursor t
+      lsp-ui-doc-show-with-mouse t
+      lsp-ui-doc-enable t
+      lsp-lens-enable t
+      lsp-eldoc-enable-hover t
+      lsp-ui-sideline-enable t
+      lsp-ui-sideline-show-diagnostics t)
+
+(with-eval-after-load 'lsp-mode
+  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
+  (require 'dap-cpptools)
+  (yas-global-mode))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -62,7 +93,8 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(doom-flatwhite))
  '(custom-safe-themes
-   '("a9eeab09d61fef94084a95f82557e147d9630fbbb82a837f971f83e66e21e5ad" default)))
+   '("a9eeab09d61fef94084a95f82557e147d9630fbbb82a837f971f83e66e21e5ad" default))
+ '(package-selected-packages '(smalltalk-mode doom-themes)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
