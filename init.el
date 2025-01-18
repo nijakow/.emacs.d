@@ -20,20 +20,40 @@
 ;;;;    P a c k a g e   S y s t e m
 ;;;;
 
+(require 'package)
+
+(setq package-archives
+  '(("MELPA"        . "https://melpa.org/packages/")
+    ("GNU ELPA"     . "https://elpa.gnu.org/packages/")))
+
 (package-initialize)
+
+(setq efn-package-content-refreshed nil)
+
+(defun efn-ensure-package-content-refreshed ()
+  (unless efn-package-content-refreshed
+    (setq efn-package-content-refreshed t)
+    (package-refresh-contents)))
 
 (defun ensure-package-list (packages)
   (dolist (package packages)
     (unless (package-installed-p package)
       (message "Package %s not installed, installing ..." package)
+      (efn-ensure-package-content-refreshed)
       (package-install package))))
 
 (defmacro ensure-packages (&rest package-list)
   `(ensure-package-list '(,@package-list)))
 
 (ensure-packages
+ doom-themes
  smalltalk-mode)
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;
+;;;;    C u s t o m   V a r i a b l e s
+;;;;
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
