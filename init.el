@@ -48,6 +48,7 @@
 (ensure-packages
  doom-themes
  smalltalk-mode
+ forth-mode
  slime
 
  lsp-mode yasnippet lsp-treemacs helm-lsp projectile hydra flycheck company avy which-key helm-xref dap-mode)
@@ -58,7 +59,9 @@
 ;;;;    S l i m e
 ;;;;
 
-(load (expand-file-name "~/quicklisp/slime-helper.el"))
+(let ((expanded (expand-file-name "~/quicklisp/slime-helper.el")))
+  (when (file-exists-p expanded)
+    (load expanded)))
 
 (setq inferior-lisp-program "sbcl")
 
