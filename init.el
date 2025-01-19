@@ -8,7 +8,7 @@
 (tool-bar-mode 0)
 
 (global-set-key [C-tab] 'other-window)
-(global-set-key [C-iso-lefttab] 'previous-window-any-frame)
+(global-set-key [C-iso-lefttab] 'buffer-menu)
 (global-set-key [home] 'buffer-menu)
 
 (setq c-default-style "linux"
@@ -48,8 +48,19 @@
 (ensure-packages
  doom-themes
  smalltalk-mode
+ slime
 
  lsp-mode yasnippet lsp-treemacs helm-lsp projectile hydra flycheck company avy which-key helm-xref dap-mode)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;
+;;;;    S l i m e
+;;;;
+
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+
+(setq inferior-lisp-program "sbcl")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
