@@ -1,6 +1,8 @@
 
 ;; (normal-erase-is-backspace-mode (if window-system 0 1)) ;; Ensure the backspace key works on FreeBSD
 
+(setq warning-minimum-level :error)
+
 (setq make-backup-files nil)
 
 (delete-selection-mode 1)
@@ -88,6 +90,8 @@
       lsp-eldoc-enable-hover t
       lsp-ui-sideline-enable t
       lsp-ui-sideline-show-diagnostics t)
+
+(setq lsp-enable-on-type-formatting nil)
 
 (with-eval-after-load 'lsp-mode
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
