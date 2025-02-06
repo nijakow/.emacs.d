@@ -94,6 +94,14 @@
   (require 'dap-cpptools)
   (yas-global-mode))
 
+(setq lsp-clients-clangd-args
+          '("-j=2"
+            "--background-index"
+            "--clang-tidy"
+            "--completion-style=bundled"
+            "--pch-storage=memory"
+            "--header-insertion=never"
+            "--header-insertion-decorators=0"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;
