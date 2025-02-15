@@ -51,9 +51,7 @@
  doom-themes
  smalltalk-mode
  forth-mode
- slime
-
- lsp-mode yasnippet lsp-treemacs helm-lsp projectile hydra flycheck company avy which-key helm-xref dap-mode)
+ slime)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -67,45 +65,6 @@
 
 (setq inferior-lisp-program "sbcl")
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;
-;;;;    L s p   S t u f f
-;;;;
-;;;; See also: https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
-;;;;
-
-(which-key-mode)
-
-(add-hook 'c-mode-hook 'lsp)
-(add-hook 'c++-mode-hook 'lsp)
-
-
-(setq lsp-enable-symbol-highlighting t
-      lsp-ui-doc-enable t
-      lsp-ui-doc-show-with-cursor t
-      lsp-ui-doc-show-with-mouse t
-      lsp-ui-doc-enable t
-      lsp-lens-enable t
-      lsp-eldoc-enable-hover t
-      lsp-ui-sideline-enable t
-      lsp-ui-sideline-show-diagnostics t)
-
-(setq lsp-enable-on-type-formatting nil)
-
-(with-eval-after-load 'lsp-mode
-  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
-  (require 'dap-cpptools)
-  (yas-global-mode))
-
-(setq lsp-clients-clangd-args
-          '("-j=2"
-            "--background-index"
-            "--clang-tidy"
-            "--completion-style=bundled"
-            "--pch-storage=memory"
-            "--header-insertion=never"
-            "--header-insertion-decorators=0"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;
