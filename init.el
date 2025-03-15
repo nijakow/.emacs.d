@@ -9,13 +9,31 @@
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 
+(setq-default indent-tabs-mode nil
+              tab-width        4)
+
 (global-set-key [C-tab] 'other-window)
 (global-set-key [C-iso-lefttab] 'buffer-menu)
-(global-set-key [home] 'buffer-menu)
+; (global-set-key [home] 'buffer-menu)
 
 (setq c-default-style "linux"
       c-basic-offset  4)
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;
+;;;;    C u s t o m   F u n c t i o n s
+;;;;
+
+(defun edit-lime-lisp ()
+  (interactive)
+  (find-file "~/me/workspace/project-horizon/lime-lisp/src/common-lisp-2/")
+  (find-file "~/me/workspace/project-horizon/lime-lisp/src/common-lisp-2/modules/compiler/compiler.lisp"))
+
+
+(defun insert-gnu-c-header-comment ()
+  (interactive)
+  (insert "/* -*- mode: c; c-file-style: \"gnu\"; c-basic-offset: 2; -*- */"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;
@@ -51,6 +69,7 @@
  doom-themes
  smalltalk-mode
  forth-mode
+ go-mode
  slime)
 
 
