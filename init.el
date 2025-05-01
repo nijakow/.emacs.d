@@ -27,8 +27,8 @@
 
 (defun edit-lime-lisp ()
   (interactive)
-  (find-file "~/me/workspace/project-horizon/lime-lisp/src/common-lisp-2/")
-  (find-file "~/me/workspace/project-horizon/lime-lisp/src/common-lisp-2/modules/compiler/compiler.lisp"))
+  (find-file "~/me/workspace/project-horizon/lime-lisp/src/common-lisp-3/")
+  (find-file "~/me/workspace/project-horizon/lime-lisp/src/common-lisp-3/modules/compiler/compiler.lisp"))
 
 
 (defun insert-gnu-c-header-comment ()
