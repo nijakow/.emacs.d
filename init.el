@@ -26,6 +26,10 @@
 ;;;;    C u s t o m   F u n c t i o n s
 ;;;;
 
+(defun edit-emacs-configuration ()
+  (interactive)
+  (find-file "~/.emacs.d/init.el"))
+
 (defun edit-lime-lisp ()
   (interactive)
   (find-file "~/me/workspace/project-horizon/lime-lisp/src/common-lisp-3/")
