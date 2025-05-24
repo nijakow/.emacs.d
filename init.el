@@ -74,7 +74,8 @@
  smalltalk-mode
  forth-mode
  go-mode
- slime)
+ slime
+ multiple-cursors)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
